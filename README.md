@@ -1,0 +1,1 @@
+# Rails 6.X: Devise with recaptcha

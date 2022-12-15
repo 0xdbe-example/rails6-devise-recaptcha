@@ -2,9 +2,17 @@
 module Captcha
     extend ActiveSupport::Concern
 
-    def captcha_check
+    def captcha_check_signin
+      captcha_check("signin")
+    end
 
-        result = verify_recaptcha(action: 'signup', minimum_score: 0.5)
+    def captcha_check_signup
+      captcha_check("signup")
+    end
+
+    def captcha_check(action)
+
+        result = verify_recaptcha(action: action, minimum_score: 0.1)
     
         if recaptcha_reply.key?("error-codes")
           Rails.logger.warn("Recaptcha Error: #{recaptcha_reply['error-codes']}")

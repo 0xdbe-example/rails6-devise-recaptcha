@@ -1,6 +1,11 @@
 <h2>Log in</h2>
 
+<%= flash[:recaptcha_error] %>
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+  <%= recaptcha_v3(action: 'signin', turbolinks: true) %>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>

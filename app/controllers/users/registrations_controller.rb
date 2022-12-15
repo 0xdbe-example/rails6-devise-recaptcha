@@ -2,7 +2,7 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   include Captcha
-  prepend_before_action :captcha_check, only: [:create]
+  prepend_before_action :captcha_check_signup, only: [:create]
   # before_action :configure_sign_up_params, only: [:create]
   # before_action :configure_account_update_params, only: [:update]
 

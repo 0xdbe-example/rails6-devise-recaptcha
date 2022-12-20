@@ -1,27 +1,33 @@
 # Rails 6.X: Devise with recaptcha
 
-## Deploy
 
-### Local
+## Deploy locally
 
-- Set env vars in .env file
-
-```
-RECAPTCHA_SITE_KEY=************
-RECAPTCHA_SECRET_KEY=************
-DATABASE_USERNAME=rails
-DATABASE_PASSWORD=************
-DATABASE_HOSTNAME=localhost
-DATABASE_NAME=rails
-NODE_OPTIONS=--openssl-legacy-provider
-```
-
-- Install Postgresql
+- Install and start Postgresql
 
 - Create user in postgresql
 
 ```
 $ sudo -u postgres createuser --pwprompt --createdb rails
+```
+
+- Set env vars in ``.envrc`` file
+
+```
+export DATABASE_HOSTNAME='*************'
+export DATABASE_NAME='*************'
+export DATABASE_PASSWORD='*************'
+export DATABASE_USERNAME='rails'
+export NODE_OPTIONS='--openssl-legacy-provider'
+export SECRET_KEY_BASE='*************'
+export RECAPTCHA_SITE_KEY='*************'
+export RECAPTCHA_SECRET_KEY='*************'
+```
+
+- Load env vars using direnv
+
+```
+direnv allow
 ```
 
 - Create database in postgresql

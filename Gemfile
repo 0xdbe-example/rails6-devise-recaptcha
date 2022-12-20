@@ -55,8 +55,6 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "dotenv-rails", "~> 2.8", :groups => [:development, :test]
-
 gem "devise", "~> 4.8.1"
 
 gem "recaptcha", "~> 5.12.3", :require => 'recaptcha/rails'

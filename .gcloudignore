@@ -1,0 +1,8 @@
+.git
+.gitignore
+.vscode
+.env*
+app.yaml
+cloud
+README.md
+node_modules
